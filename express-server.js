@@ -28,6 +28,11 @@ app.use(morgan('dev'))
 ///// ROUTES
 //////////////////////////////
 
+app.use(require('./routes/FinanzasRoutes'));
+
+/*
+app.get('/finanzas/calculo',Ingresos.update)
+
 app.get('/', Ingresos.list)
 app.post('/', Ingresos.create)
 app.get('/:id', Ingresos.get)
@@ -38,6 +43,8 @@ app.delete('/:id', Ingresos.delete)
 app.get('*', (req, res) => {
     res.status(404).send(' Esta página no existe')
 })
+*/
+
 ////////////////////////////////
 ///// SERVER LISTENING
 //////////////////////////////

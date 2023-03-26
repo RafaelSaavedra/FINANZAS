@@ -1,8 +1,13 @@
-const Egresos = require ('../models/egresos');
+//const Egresos = require ('../models/egresos');
 
 
 
-module.exports = {
+//module.exports = {
+    const Egresos = {
+
+    get : (req, res) => {
+        res.status (200).send ('Este es un egreso')
+    },
     list: (req, res) => {
         res.status(200).send('Hola egreso')
     },
@@ -17,4 +22,4 @@ module.exports = {
     }
 }
 
-//module.exports = Egresos
+module.exports = Egresos
