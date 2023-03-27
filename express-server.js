@@ -27,8 +27,16 @@ app.use(morgan('dev'))
 ////////////////////////////////
 ///// ROUTES
 //////////////////////////////
+app.get('/', (req, res) => {
+    res.status (200).send ('Hola Señores')
+})
 
-app.use(require('./routes/FinanzasRoutes'));
+const FinanzasRoutes = require('./routes/FinanzasRoutes')
+
+app.use( FinanzasRoutes);
+
+//app.use(require('./routes/FinanzasRoutes'));
+
 
 /*
 app.get('/finanzas/calculo',Ingresos.update)

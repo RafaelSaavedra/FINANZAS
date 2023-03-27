@@ -1,12 +1,21 @@
+
+
 //const Egresos = require ('../models/egresos');
 
-
-
 //module.exports = {
-    const Egresos = {
+   const Egresos = {
 
     get : (req, res) => {
-        res.status (200).send ('Este es un egreso')
+        //Aqui puedes ejecutar otras cosas
+        Egresos.find()
+        .then((result) => {
+            res.send('Hola desde el controlador! Todo salió bien :)')
+            //res.json(result)
+        })
+        .catch((err) => {
+            res.send('Hola desde el controlador, todo salió mal...:(')
+        })
+        //res.status (200).send ('Este es un egreso')
     },
     list: (req, res) => {
         res.status(200).send('Hola egreso')

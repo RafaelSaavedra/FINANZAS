@@ -5,9 +5,11 @@ const Ingresos = require('../controllers/controlIngresos')
 const Egresos = require('../controllers/controlEgresos')
 
 
+router.get('/finanzas', (req, res) => {
+    res.status (200).send ('Hola mundo, bienvenido a Finanzas')
+})
+
 router.get('/finanzas/calculo',Ingresos.update)
-
-
 
 /////////////////////////////////////////
 //////Rutas Ingresos
