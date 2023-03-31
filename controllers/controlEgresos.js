@@ -1,16 +1,16 @@
 
 
-//const Egresos = require ('../models/egresos');
+const Egresos = require ('../models/egresos');
 
-//module.exports = {
-   const Egresos = {
+module.exports = {
+//   const Egresos = {
 
     get : (req, res) => {
         //Aqui puedes ejecutar otras cosas
         Egresos.find()
         .then((result) => {
-            res.send('Hola desde el controlador! Todo salió bien :)')
-            //res.json(result)
+            //res.send('Hola desde el controlador! Todo salió bien :)')
+            res.json(result)
         })
         .catch((err) => {
             res.send('Hola desde el controlador, todo salió mal...:(')
@@ -31,4 +31,4 @@
     }
 }
 
-module.exports = Egresos
+//module.exports = Egresos

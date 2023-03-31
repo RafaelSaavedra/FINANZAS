@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const IngresosSchema = Schema ({
     fecha : String,
-    proveedor: String,
+    cliente: String,
     producto: String,
     cantidad: Number,
     precio: Number,

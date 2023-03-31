@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const morgan = require('morgan');
-const Ingresos = require('./controllers/controlIngresos')
-const Egresos = require('./controllers/controlEgresos')
+const Ingresos = require('./controllers/controlIngresos');
+const Egresos = require('./controllers/controlEgresos');
+const FinanzasRoutes = require('./routes/FinanzasRoutes');
+const ejs = require('ejs');
 
 const app = express();
 const PORT = 3000
@@ -22,17 +24,19 @@ mongoose.connect('mongodb+srv://Rafael:15Anestesiologia20@cluster0.rnudzg3.mongo
 ///// MIDDLEWARES
 //////////////////////////////
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
+app.set('view engine', 'ejs')
 
 ////////////////////////////////
 ///// ROUTES
 //////////////////////////////
 app.get('/', (req, res) => {
+    ///// req  client request data
+    ////  res response object goes to the client
     res.status (200).send ('Hola Señores')
 })
 
-const FinanzasRoutes = require('./routes/FinanzasRoutes')
-
+//const FinanzasRoutes = require('./routes/FinanzasRoutes')
 app.use( FinanzasRoutes);
 
 //app.use(require('./routes/FinanzasRoutes'));
@@ -57,5 +61,5 @@ app.get('*', (req, res) => {
 ///// SERVER LISTENING
 //////////////////////////////
 app.listen(PORT, () => {
-    console.log('Server listening on 3000');
+    console.log(`Server listening on ${PORT}`);
 })
