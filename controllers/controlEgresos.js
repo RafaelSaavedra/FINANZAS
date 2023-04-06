@@ -3,7 +3,7 @@
 const Egresos = require ('../models/egresos');
 
 module.exports = {
-//   const Egresos = {
+
 
     get : (req, res) => {
         //Aqui puedes ejecutar otras cosas
@@ -31,4 +31,3 @@ module.exports = {
     }
 }
 
-//module.exports = Egresos

@@ -1,6 +1,5 @@
 const express = require ('express');
 const router = express.Router();
-//const ejs = require('ejs');
 
 
 const Ingresos = require('../controllers/controlIngresos')

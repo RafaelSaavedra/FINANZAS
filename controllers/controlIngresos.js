@@ -1,8 +1,7 @@
 const Ingresos = require ('../models/ingresos');
-//const ejs = require('ejs');
 
 module.exports = {
-//const Ingresos = {
+
     get : (req, res) => {
         //console.log(req.params);
         //res.status (200).send (req.params)
@@ -43,16 +42,16 @@ module.exports = {
         
         const Ingreso = new Ingreso(newIngreso)
         
-        // pet.save() devuelve una promesa
+        // Ingreso.save() devuelve una promesa
         savedIngreso = Ingreso.save()
         
         savedIngreso
             // Respondo exitosamente
            // .then((Ingreso) => {     
-           //     res.render(`ingreso/:id`, myPet);
+           //     res.render(`ingreso/:id`, nuevoIngreso);
            .then((savedIngreso) => {
             res.render(`entradas/registroIngresos`,savedIngreso)
-              // res.redirect(`pets/show`, myPet);
+              // res.redirect(`entradas/registroIngresos`, nuevoIngreso);
             })
             // Respondo si hay error
             .catch((error) => {
@@ -71,5 +70,4 @@ module.exports = {
     }
 }
 
-//module.exports = Ingresos
 
