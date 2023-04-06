@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const ejs = require('ejs');
+//const ejs = require('ejs');
 
 
 const Ingresos = require('../controllers/controlIngresos')
@@ -23,9 +23,7 @@ router.put('/Ingresos/:id', Ingresos.update)
 router.patch('/Ingresos/:id', Ingresos.update)
 router.delete('/Ingresos/:id', Ingresos.delete)
 
-//router.get('*', (req, res) => {
- //   res.status(404).send(' Esta página no existe')
-//})
+
 
 /////////////////////////////////////////
 //////Rutas Egresos

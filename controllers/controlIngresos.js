@@ -1,20 +1,30 @@
 const Ingresos = require ('../models/ingresos');
-const ejs = require('ejs');
-
+//const ejs = require('ejs');
 
 module.exports = {
 //const Ingresos = {
     get : (req, res) => {
         //console.log(req.params);
         //res.status (200).send (req.params)
-        res.render('entradas/formatoIngresos', {message: 'Message1 Hello World !!! 🌎'})
-        //res.render('entradas/registroIngresos', {message: 'Message2 Hello World !!! 🌎'})
+    res.render('entradas/formatoIngresos', {message: 'Message1 Hello World !!! 🌎'})
+        const regIngresos = 
+        {
+            fecha : '25 febrero 23',
+            cliente: 'Nutrisa',
+            producto: 'Chispas yogurt',
+            cantidad: 3500,
+            precio: 66,
+            total: 250000,
+            cobrado: false
+        }
+    
+       /// res.render('entradas/registroIngresos', {titulo : "Titulo dinamico"})
         //res.status (200).send ('<h1>Este es un ingreso</h1>')
         
     },
     list: (req, res) => {
-        //res.render('ingresos', {message: 'Hello World !!! 🌎'})
-        res.status(200).send('Hola ingreso')
+        res.render('entradas/registroIngresos', {titulo: 'Hello World !!! 🌎'})
+        //res.status(200).send('Hola ingreso')
     },
     create: (req, res) => {
         //res.render('entradas/registroIngresos')
@@ -41,7 +51,7 @@ module.exports = {
            // .then((Ingreso) => {     
            //     res.render(`ingreso/:id`, myPet);
            .then((savedIngreso) => {
-            res.render(`Ingresos/:id`,savedIngreso)
+            res.render(`entradas/registroIngresos`,savedIngreso)
               // res.redirect(`pets/show`, myPet);
             })
             // Respondo si hay error
@@ -63,13 +73,3 @@ module.exports = {
 
 //module.exports = Ingresos
 
-/*
-const registroIngresos = {
-    fecha : '25 febrero 23',
-    cliente: 'Nutrisa',
-    producto: 'Chispas yogurt',
-    cantidad: 3500,
-    precio: 66,
-    total: 250000,
-    cobrado: false
-}*/
