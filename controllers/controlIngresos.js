@@ -5,7 +5,7 @@ module.exports = {
     get : (req, res) => {
         //console.log(req.params);
         //res.status (200).send (req.params)
-    res.render('entradas/formatoIngresos', {message: 'Message1 Hello World !!! 🌎'})
+    //res.render('entradas/formatoIngresos', {message: 'Message1 Hello World !!! 🌎'})
         const regIngresos = 
         {
             fecha : '25 febrero 23',
@@ -17,7 +17,7 @@ module.exports = {
             cobrado: false
         }
     
-       /// res.render('entradas/registroIngresos', {titulo : "Titulo dinamico"})
+        res.render('entradas/registroIngresos', { regIngresos })
         //res.status (200).send ('<h1>Este es un ingreso</h1>')
         
     },

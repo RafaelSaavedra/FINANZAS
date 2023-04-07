@@ -8,6 +8,8 @@ const FinanzasRoutes = require('./routes/FinanzasRoutes');
 const app = express();
 const PORT = 3000
 
+app.set('view engine', 'ejs');
+
 /////////////////////////////////////
 /////// CONNECTING TO EXTERNAL SERVER
 /////////////////////////////////////////
@@ -23,7 +25,6 @@ mongoose.connect('mongodb+srv://Rafael:15Anestesiologia20@cluster0.rnudzg3.mongo
 //////////////////////////////
 
 app.use(morgan('dev'));
-app.set('view engine', 'ejs');
 
 ////////////////////////////////
 ///// ROUTES
